@@ -46,7 +46,7 @@ static bool FileHasAcceptableExtension(const char *extension) {
         ".mp1", ".mp2", ".f4v", "hlv", "nrg", "m2v", ".swf",
         ".avi", ".mpg", ".mpeg", ".awb", ".mpga", ".vc1", ".vob", 
         ".divx", ".mov", ".qcp", ".ec3"
->>>>>>> 8b53ad30f... libstagefright: Extended media support via FFMPEG
+
     };
     static const size_t kNumValidExtensions =
         sizeof(kValidExtensions) / sizeof(kValidExtensions[0]);
