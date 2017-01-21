@@ -107,10 +107,12 @@ extern const char *MEDIA_MIMETYPE_CONTAINER_FFMPEG;
 // frameworks/base/media/java/android/media/AudioFormat.java. Unfortunately,
 // they are not defined in frameworks/av, so defining them here.
 enum AudioEncoding {
+    kAudioEncodingInvalid = 0,
     kAudioEncodingPcm16bit = 2,
     kAudioEncodingPcm8bit = 3,
     kAudioEncodingPcmFloat = 4,
     kAudioEncodingPcm24bitPacked = 100,
+    kAudioEncodingPcm32bit = 201,
 };
 
 static AudioEncoding bitsToAudioEncoding(int32_t bits) {
