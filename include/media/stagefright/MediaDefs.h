@@ -113,6 +113,37 @@ enum AudioEncoding {
     kAudioEncodingPcm24bitPacked = 100,
 };
 
+static AudioEncoding bitsToAudioEncoding(int32_t bits) {
+    switch (bits) {
+        case 8:
+            return kAudioEncodingPcm8bit;
+        case 16:
+            return kAudioEncodingPcm16bit;
+        case 24:
+            return kAudioEncodingPcm32bit;
+        case 32:
+            return kAudioEncodingPcmFloat;
+    }
+    return kAudioEncodingInvalid;
+}
+
+static int32_t audioEncodingToBits(AudioEncoding encoding) {
+    switch (encoding) {
+        case kAudioEncodingInvalid:
+            return 0;
+        case kAudioEncodingPcm8bit:
+            return 8;
+        case kAudioEncodingPcm16bit:
+            return 16;
+        case kAudioEncodingPcm24bitPacked:
+        case kAudioEncodingPcm32bit:
+            return 24;
+        case kAudioEncodingPcmFloat:
+            return 32;
+    }
+    return 0;
+}
+
 }  // namespace android
 
 #include <media/stagefright/ExtendedMediaDefs.h>
